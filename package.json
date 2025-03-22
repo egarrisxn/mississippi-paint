@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "MS Paint with Nextjs.",
   "license": "MIT",
+  "author": "Ethan G. (https://egxo.dev)",
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -10,7 +11,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "next-lint": "next lint",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
@@ -23,10 +28,16 @@
     "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.0.15",
     "@types/node": "^22.13.11",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
+    "eslint": "^9.23.0",
+    "eslint-config-next": "15.2.3",
+    "eslint-config-prettier": "^10.1.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.15",
     "typescript": "5.7.2"
@@ -34,6 +45,17 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "sharp"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "tabWidth": 2,
+    "printWidth": 100,
+    "bracketSpacing": true,
+    "singleQuote": false,
+    "jsxSingleQuote": false,
+    "plugins": [
+      "prettier-plugin-tailwindcss"
     ]
   }
 }

@@ -10,13 +10,11 @@ interface ToolBarProps {
 
 export function ToolBar({ selectedTool, onToolSelect }: ToolBarProps) {
   return (
-    <div className="w-8 bg-gray-300 p-0.5 border-r border-gray-400">
+    <div className="w-8 border-r border-gray-400 bg-gray-300 p-0.5">
       <Button
         variant="ghost"
-        className={`size-7 p-0 min-w-0 mb-0.5 ${
-          selectedTool === "brush"
-            ? "bg-gray-300 border border-gray-400 shadow-inner"
-            : ""
+        className={`mb-0.5 size-7 min-w-0 p-0 ${
+          selectedTool === "brush" ? "border border-gray-400 bg-gray-300 shadow-inner" : ""
         }`}
         onClick={() => onToolSelect("brush")}
       >
@@ -36,10 +34,8 @@ export function ToolBar({ selectedTool, onToolSelect }: ToolBarProps) {
       </Button>
       <Button
         variant="ghost"
-        className={`size-7 p-0 min-w-0 mb-0.5 ${
-          selectedTool === "eraser"
-            ? "bg-gray-300 border border-gray-400 shadow-inner"
-            : ""
+        className={`mb-0.5 size-7 min-w-0 p-0 ${
+          selectedTool === "eraser" ? "border border-gray-400 bg-gray-300 shadow-inner" : ""
         }`}
         onClick={() => onToolSelect("eraser")}
       >

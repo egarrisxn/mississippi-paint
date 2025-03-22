@@ -25,7 +25,7 @@ export function CanvasHeader({
   return (
     <>
       <div
-        className="bg-blue-900 rounded-t text-white px-2 py-1 flex justify-between items-center cursor-move"
+        className="flex cursor-move items-center justify-between rounded-t bg-blue-900 px-2 py-1 text-white"
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}
@@ -35,14 +35,14 @@ export function CanvasHeader({
         <div className="flex gap-1">
           <Button
             variant="ghost"
-            className="size-5 p-0 cursor-pointer min-w-0 text-white hover:bg-blue-600"
+            className="size-5 min-w-0 cursor-pointer p-0 text-white hover:bg-blue-600"
             onClick={onMinimize}
           >
             -
           </Button>
           <Button
             variant="ghost"
-            className="size-5 p-0 cursor-pointer min-w-0 text-white hover:bg-blue-600"
+            className="size-5 min-w-0 cursor-pointer p-0 text-white hover:bg-blue-600"
             onClick={onClose}
           >
             ×
@@ -51,7 +51,7 @@ export function CanvasHeader({
       </div>
       <div className="bg-gray-300 p-1 text-sm">
         <span
-          className="mr-1 cursor-pointer text-slate-800 hover:text-black hover:bg-gray-400/20 rounded px-1.5 py-0.5"
+          className="mr-1 cursor-pointer rounded px-1.5 py-0.5 text-slate-800 hover:bg-gray-400/20 hover:text-black"
           onClick={onNew}
         >
           New
@@ -60,7 +60,7 @@ export function CanvasHeader({
           href="https://github.com/egarrisxn/mississippi-paint"
           target="_blank"
           rel="noopener noreferrer"
-          className="cursor-pointer text-slate-800 hover:text-black hover:bg-gray-400/20 rounded px-1.5 py-0.5"
+          className="cursor-pointer rounded px-1.5 py-0.5 text-slate-800 hover:bg-gray-400/20 hover:text-black"
         >
           Help
         </a>

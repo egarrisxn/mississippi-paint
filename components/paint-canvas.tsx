@@ -18,9 +18,7 @@ export default function PaintCanvas() {
   const [isDrawing, setIsDrawing] = useState(false);
   const [color, setColor] = useState("#000000");
   const [tool, setTool] = useState("brush");
-  const [windowState, setWindowState] = useState<"normal" | "minimized">(
-    "normal"
-  );
+  const [windowState, setWindowState] = useState<"normal" | "minimized">("normal");
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const [showNewCanvasButton, setShowNewCanvasButton] = useState(false);
@@ -103,16 +101,13 @@ export default function PaintCanvas() {
   };
 
   const minimizeWindow = () => {
-    setWindowState((prevState) =>
-      prevState === "minimized" ? "normal" : "minimized"
-    );
+    setWindowState((prevState) => (prevState === "minimized" ? "normal" : "minimized"));
   };
 
   useEffect(() => {
     const container = containerRef.current;
     if (container) {
-      container.style.visibility =
-        windowState === "minimized" ? "hidden" : "visible";
+      container.style.visibility = windowState === "minimized" ? "hidden" : "visible";
     }
   }, [windowState]);
 
@@ -172,8 +167,7 @@ export default function PaintCanvas() {
   useEffect(() => {
     const handleBeforeUnload = (event: BeforeUnloadEvent) => {
       event.preventDefault();
-      const message =
-        "Your drawing will be lost. Are you sure you want to leave?";
+      const message = "Your drawing will be lost. Are you sure you want to leave?";
       return message;
     };
 
@@ -185,10 +179,10 @@ export default function PaintCanvas() {
   }, []);
 
   return (
-    <div className="bg-[url('/wallpaper.jpeg')] bg-cover bg-center h-screen w-full overflow-hidden relative">
+    <div className="relative h-screen w-full overflow-hidden bg-[url('/wallpaper.jpeg')] bg-cover bg-center">
       {showNewCanvasButton && (
         <Button
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
           onClick={newCanvas}
         >
           New Canvas
@@ -196,7 +190,7 @@ export default function PaintCanvas() {
       )}
       <div
         ref={containerRef}
-        className="absolute bg-gray-200 border-2 rounded-sm border-white shadow-lg w-[400px] lg:w-[800px] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-1/2 left-1/2 w-[400px] -translate-x-1/2 -translate-y-1/2 transform rounded-sm border-2 border-white bg-gray-200 shadow-lg lg:w-[800px]"
       >
         <CanvasHeader
           onMinimize={minimizeWindow}
@@ -209,7 +203,7 @@ export default function PaintCanvas() {
         />
         <div className="flex">
           <ToolBar selectedTool={tool} onToolSelect={setTool} />
-          <div className="overflow-auto border border-gray-400 w-[380px] lg:w-[760px] h-[450px] lg:h-[500px]">
+          <div className="h-[450px] w-[380px] overflow-auto border border-gray-400 lg:h-[500px] lg:w-[760px]">
             <canvas
               ref={canvasRef}
               width={2000}
@@ -221,12 +215,8 @@ export default function PaintCanvas() {
             />
           </div>
         </div>
-        <ColorPalette
-          colors={colors}
-          selectedColor={color}
-          onColorSelect={setColor}
-        />
-        <div className="bg-gray-300 p-1.5 text-sm border-t border-gray-400">
+        <ColorPalette colors={colors} selectedColor={color} onColorSelect={setColor} />
+        <div className="border-t border-gray-400 bg-gray-300 p-1.5 text-sm">
           For help, utilize the Help Button above.
         </div>
       </div>
