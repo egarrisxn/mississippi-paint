@@ -1,9 +1,5 @@
-import Paint from "@/components/paint";
+import PaintCanvas from "../components/paint-canvas";
 
 export default function Home() {
-  return (
-    <>
-      <Paint />
-    </>
-  );
+  return <PaintCanvas />;
 }
