@@ -56,6 +56,7 @@ Now you're ready to start building! 🚀
 First, clone the repository onto your local machine:
 
 ```bash
+git clone https://github.com/egarrisxn/mississippi-paint.git 
 cd mississippi-paint
 ```
 
