@@ -13,9 +13,8 @@
     "start": "next start",
     "next-lint": "next lint",
     "lint": "eslint",
-    "lint:fix": "eslint --fix",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write ."
+    "format": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
@@ -36,26 +35,17 @@
     "eslint": "^9.23.0",
     "eslint-config-next": "15.2.3",
     "eslint-config-prettier": "^10.1.1",
+    "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "postcss": "^8.5.3",
     "tailwindcss": "^4.0.15",
     "typescript": "5.7.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "sharp"
-    ]
-  },
-  "prettier": {
-    "semi": true,
-    "tabWidth": 2,
-    "printWidth": 100,
-    "bracketSpacing": true,
-    "singleQuote": false,
-    "jsxSingleQuote": false,
-    "plugins": [
-      "prettier-plugin-tailwindcss"
+      "@tailwindcss/oxide",
+      "sharp",
+      "unrs-resolver"
     ]
   }
 }

@@ -28,6 +28,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Mississippi Paint" />
+      </head>
       <body>{children}</body>
     </html>
   );
