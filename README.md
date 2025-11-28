@@ -6,7 +6,7 @@
 
 ## **Overview**
 
-Mississippi Paint transforms you back in time to when things were just easier. This app is a take on the classic MSPaint, but running all in the browser!
+Mississippi Paint transforms you back in time to when things were just easier. This app is a take on the classic MSPaint, but running all in the browser! Inspired by work from the v0 community.
 
 ## **Technologies**
 
